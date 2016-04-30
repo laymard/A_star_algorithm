@@ -1,0 +1,3 @@
+﻿  Launcher.cpp
+c:\users\lolo\documents\visual studio 2015\projects\pathfinding\pathfinding\node.h(39): warning C4018: '<' : incompatibilité signed/unsigned
+  PathFinding.vcxproj -> C:\Users\Lolo\documents\visual studio 2015\Projects\PathFinding\Debug\PathFinding.exe
