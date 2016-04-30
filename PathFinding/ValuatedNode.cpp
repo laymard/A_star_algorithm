@@ -17,6 +17,7 @@ ValuatedNode::ValuatedNode(Node * n)
 
 ValuatedNode::~ValuatedNode()
 {
+	delete parentVNode;
 }
 
 int ValuatedNode::getFvalue()const

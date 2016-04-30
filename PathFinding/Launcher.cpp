@@ -12,25 +12,31 @@ Launcher::~Launcher()
 {
 }
 
+void Launcher::beginMessage()
+{
+	cout << "A* Path finder by Laurent AYMARD" << endl;
+	cout << "Command: " << endl;
+	cout << "[node start][node goal] | between 0 and 59" << endl;
+}
+
 
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, nodeID, nodeIdstart, nodeIdgoal, cost, passability;
 	NodeBuilder builder = NodeBuilder();
 	vector<Node*> buckminNodes = builder.buildBuckminNodes();
 	vector<Edge*> buckminEdges = builder.connectBuckminNodes(buckminNodes);
 	cout << "Number of Nodes: " << builder.getNodeCount() << endl;
 	cout << "Number of Edges: " << builder.getEdgeCount() << endl;
 	Graph* g = new Graph(buckminNodes, buckminEdges);
-	Algorithm* algo = new Algorithm(g, 0, 10);
-	g->setEdgePassability(54, false);
-	algo->run();
-	/*for (int i = 0; i < buckminNodes.size(); i++)
-	{
-		buckminNodes[i]->showConnectedNodes();
-	}*/
+	Launcher::beginMessage();
+	cin >> nodeIdstart;
+	cin >> nodeIdgoal;
+	Algorithm* algo = new Algorithm(g, nodeIdstart, nodeIdgoal);
 
+	algo->run();
+	delete algo;
 
 	std::cin >> i;
 	return i;

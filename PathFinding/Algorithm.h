@@ -33,7 +33,5 @@ private:
 	Graph* graph;
 	ValuatedNode* start;
 	ValuatedNode* goal;
-	ValuatedNode* P;
-	ValuatedNode* Q;
 };
 

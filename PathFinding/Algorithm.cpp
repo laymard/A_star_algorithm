@@ -16,6 +16,9 @@ Algorithm::Algorithm(Graph * g, int startId, int endId)
 
 Algorithm::~Algorithm()
 {
+	closedList.clear();
+	delete start;
+	delete goal;
 }
 
 void Algorithm::run()

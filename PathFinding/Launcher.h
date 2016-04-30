@@ -11,7 +11,7 @@ public:
 	Launcher();
 	~Launcher();
 
-	
+	static void beginMessage();
 
 
 };
