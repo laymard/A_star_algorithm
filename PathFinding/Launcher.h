@@ -12,6 +12,11 @@ public:
 	~Launcher();
 
 	static void beginMessage();
+	static void C0Message();
+	static void C1Message();
+	static void C2Message();
+	static void C3Message();
+	static void C4Message();
 
 
 };

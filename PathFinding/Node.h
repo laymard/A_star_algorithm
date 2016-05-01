@@ -17,6 +17,7 @@ public:
 	int getId() const;
 	vector<Node*> getConnectedNodes();
 	vector<int> getConnectedEdges();
+
 	void showConnectedNodes();
 	
 	void addConnectedNode(Node* node, int idEdge);

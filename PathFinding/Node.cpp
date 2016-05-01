@@ -38,7 +38,7 @@ void Node::showConnectedNodes()
 	cout << "Node number:" << id << " is connected with: " << endl;
 	for (int i = 0; i < connectedNodes.size(); i++)
 	{
-		cout << "\t " << *(connectedNodes[i]) << " D="<< getCoord()->distanceTo(*(connectedNodes[i]->getCoord()))<<endl;
+		cout << "\t Node: N" << connectedNodes[i]->getId() << " with edge: E"<< connectedEdge[i]<<endl;
 	}
 }
 

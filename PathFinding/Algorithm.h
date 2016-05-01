@@ -11,8 +11,11 @@ class Algorithm
 {
 public:
 	Algorithm();
+	Algorithm(Graph* g);
 	Algorithm(Graph* g, int startId, int endId);
 	~Algorithm();
+
+	void setNodes(int startId, int endId);
 
 	void run();
 	void calculHvalue(ValuatedNode* vn);

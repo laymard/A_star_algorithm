@@ -6,6 +6,11 @@ Algorithm::Algorithm()
 {
 }
 
+Algorithm::Algorithm(Graph * g)
+{
+	graph = g;
+}
+
 Algorithm::Algorithm(Graph * g, int startId, int endId)
 {
 	graph = g;
@@ -19,6 +24,12 @@ Algorithm::~Algorithm()
 	closedList.clear();
 	delete start;
 	delete goal;
+}
+
+void Algorithm::setNodes(int startId, int endId)
+{
+	start = new ValuatedNode(graph->getNodeById(startId));
+	goal = new ValuatedNode(graph->getNodeById(endId));
 }
 
 void Algorithm::run()
