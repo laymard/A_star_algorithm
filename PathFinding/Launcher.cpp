@@ -80,7 +80,6 @@ int main(int argc, char *argv[])
 			
 			cin >> nodeIdstart >> nodeIdgoal;
 			algo = new Algorithm(g, nodeIdstart, nodeIdgoal);
-			//algo->setNodes(nodeIdstart, nodeIdgoal);
 			algo->run();
 			break;
 
@@ -110,6 +109,6 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	std::cin >> i;
-	return i;
+	
+	return 0;
 }
