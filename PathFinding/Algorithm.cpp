@@ -89,7 +89,7 @@ void Algorithm::calculHvalue(ValuatedNode * vn)
 void Algorithm::calculGvalue(ValuatedNode * vn1, ValuatedNode * vn2)
 {
 	float cost = graph->getCostBetween(vn1->getNode(), vn2->getNode());
-	vn2->setGvalue(cost + vn2->getGvalue());
+	vn2->setGvalue(cost + vn1->getGvalue());
 }
 
 bool Algorithm::isInLists(ValuatedNode * vn)
@@ -159,6 +159,7 @@ void Algorithm::forceOpenListSorting()
 void Algorithm::traceBack(vector<ValuatedNode*> closedList)
 {
 	vector<int> res = vector<int>();
+	int finalCost = closedList[closedList.size() - 1]->getGvalue();
 	ValuatedNode* current = closedList[closedList.size() - 1];
 	res.push_back(0);
 	res.pop_back();
@@ -175,7 +176,8 @@ void Algorithm::traceBack(vector<ValuatedNode*> closedList)
 		cout << "N" << res[i] << "->E" << graph->getEdgeId(res[i], res[i-1]) << "->";
 	}
 	
-	cout << "N" << res[0] << endl;;
+	cout << "N" << res[0] << endl;
+	cout << "Cost of the path found:" << finalCost << endl;
 }
 
 
