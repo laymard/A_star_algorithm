@@ -77,7 +77,7 @@ void Algorithm::run()
 		closedList.push_back(p);
 
 	}
-	cout << "Error, no pat found" << endl;
+	cout << "Error, no path found" << endl;
 }
 
 void Algorithm::calculHvalue(ValuatedNode * vn)
@@ -158,14 +158,24 @@ void Algorithm::forceOpenListSorting()
 
 void Algorithm::traceBack(vector<ValuatedNode*> closedList)
 {
-	cout << "Path found: " << endl;
+	vector<int> res = vector<int>();
 	ValuatedNode* current = closedList[closedList.size() - 1];
+	res.push_back(0);
+	res.pop_back();
+	cout << "Path found: " << endl;
 	while (current->getNode()->getId() != start->getNode()->getId())
 	{
-		cout << "N" << current->getNode()->getId() << "->E" << graph->getEdgeId(current->getNode(), current->getParentVNode()->getNode()) << "->";
+		res.push_back(current->getNode()->getId());
 		current = current->getParentVNode();
 	}
-	cout << "N" << current->getNode()->getId() << endl;
+
+	res.push_back(start->getNode()->getId());
+	for (int i = res.size()-1; i > 0; i--)
+	{
+		cout << "N" << res[i] << "->E" << graph->getEdgeId(res[i], res[i-1]) << "->";
+	}
+	
+	cout << "N" << res[0] << endl;;
 }
 
 
